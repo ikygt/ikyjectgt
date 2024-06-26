@@ -1,176 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sidebar Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+  margin: 0px;
+  padding: 0px;
+}
 
-<head>
-  <title>Permohonan Gardu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-image: url('https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1000&dpr=1');
-      background-position: center;
-      
-    }
+body{
+  max-width: 1600px;
+  margin: auto;
+  height: 700px;
+  background: white;
+}
 
+nav{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 214px;
+  background: #212523;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
+  display: block;
+}
 
-  #form-container {
-    width: 500px;
-    margin: 0 auto;
-    background-color: #66c79a;
-    border: 2px solid #39da08;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  #form-container h2 {
-    text-align: center;
-    color: #1E90FF;
+nav .top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(45, 196, 90);
+}
+
+nav .top img{
+  width: 90px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin: 10px;
+}
+
+nav .top h1{
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+nav .top span.line{
+  display: block;
+  width: 205px;
+  height: 1px;
+  background: white;
+}
+
+nav .bot .nav-links a{
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+nav a span{
+  margin-left: 25px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DCDCDC;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+input{
+  position: absolute;
+  margin-left: 22.5px;
+  margin-top: 22px;
+  transform: scale(2.1);
+  opacity: 0;
+  cursor: pointer;
+}
+
+.navbar{
+  max-width: 100%;
+  min-height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(45, 196, 90);
+  margin-left: 214px;
+}
+
+.navbar .left .hamburger{
+  padding: 10px;
+}
+
+.navbar .left .hamburger span{
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 6.5px;
+}
+
+.navbar .right h1{
+  color: white;
+  padding: 10px;
+}
+
+input{
+  margin-left: 237px;
+}
+
+input:checked ~ nav{
+  display: none;
+}
+
+input:checked ~ .navbar{
+  margin-left: 0px;
+}
+
+input:checked{
+  margin-left: 22.5px;
+}
+
+@media(max-width: 900px){
+  body{
+    overflow-y: scroll;
   }
 
-  #form-container input[type="text"], #form-container input[type="date"], #form-container input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #f1d0d0;
-    border-radius: 5px;
-  }
-  #form-container input[type="submit"] {
-    background-color: #0011ff;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    
-    cursor: pointer;
-  }
-  #form-container input[type="submit"]:hover {
-    background-color: #004B8D;
-  }
-  #footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 12px;
-    color: #58ff42;
-  }
-  .hidden {
+  nav{
     display: none;
-  }
-  #span{
-    font-size: 15px;
-  }
-  </style>
-
-<script>
-  function toggleVisibility() {
-      var element = document.getElementById("myElement");
-      if (element.style.display === "block") {
-          element.style.display = "none"; // Tampilkan elemen
-      } else {
-          element.style.display = "block"; // Sembunyikan elemen
-      }
-      
+    width: 200px;
   }
 
-  function toggleVisibility1() {
-      var element1 = document.getElementById("myElement1");
-      if (element1.style.display === "block") {
-          element1.style.display = "none"; // Tampilkan elemen
-      } else {
-          element1.style.display = "block"; // Sembunyikan elemen
-      }
+  nav .top span.line{
+    width: 191px;
   }
 
-  function toggleVisibility2() {
-      var element2 = document.getElementById("myElement2");
-      if (element2.style.display === "block") {
-          element2.style.display = "none"; // Tampilkan elemen
-      } else {
-          element2.style.display = "block"; // Sembunyikan elemen
-      }
+  .navbar{
+    margin-left: 0px;
+    width: 100%;
   }
-</script>
 
+  input{
+    opacity: 0;
+    margin-left: 22.5px;
+  }
+
+  input:checked{
+    margin-left: 222px;
+  }
+
+  input:checked ~ nav{
+    display: block;
+  }
+
+  input:checked ~ .navbar{
+    margin-left: 200px;
+  }
+}
+    </style>
   </head>
-
-<body>
-  <div id="form-container">
-    <h2>Permohonan Gardu</h2>
-
-    <!-- akses link script app -->
-
-    <form name="form" action="https://script.google.com/macros/s/AKfycbzQGXM9_Qypeki1i1AE46Ct0zY6oHLr6GZWWKHsGTbfcSn2jRBKQr3ind-4PUqe01g/exec" method="post">
-    <!-- end akses  -->
-    <input onclick="toggleVisibility()" type="checkbox"/> Permohonan Gardu
-
-    <div id="myElement" class="hidden">
-      <h2>Identitas Gardu</h2>
-        <label for="jenis_pekerjaan">Jenis Pekerjaan:</label>
-      <input type="text" id="jenis_pekerjaan" name="jenis_pekerjaan" required>
-        <label for="nama_pelanggan">Nama Pelanggan:</label>
-      <input type="text" id="nama_pelanggan" name="nama_pelanggan" required>
-        <label for="pelaksana">Pelaksana:</label>
-      <input type="text" id="pelaksana" name="pelaksana" required>
-      	<label for="nama_gardu">Nama Gardu:</label>
-      <input type="text" id="nama_gardu" name="nama_gardu" required>
-        <label for="ulp">ULP:</label>
-      <input type="text" id="ulp" name="ulp" required>
-      	<label for="lks_gardu">Tikor Lokasi Gardu:</label>
-      <input type="text" id="lks_gardu" name="lks_gardu" required>
-        <label for="kecamatan">Kecamatan:</label>
-      <input type="text" id="kecamatan" name="kecamatan" required>
-      	<label for="kabupaten">Kabupaten:</label>
-      <input type="text" id="kabupaten" name="kabupaten" required>
-        <label for="tglp">Tanggal Pasang:</label>
-      <input type="text" id="tglp" name="tglp" required>
-        <label for="tglo">Tanggal Operasi:</label>
-      <input type="text" id="tglo" name="tglo" required>
-      
-
-
+  <body>
+    <input type="checkbox"> <!-- terakhir -->
+    <nav>
+      <div class="top">
+        <img src="a.jfif">
+        <h1>administrasi</h1>
+        <span class = "line"></span>
       </div>
-      <br>
-      
-      <input onclick="toggleVisibility1()" type="checkbox"/> Identitas Trafo
-      <div id="myElement1" class="hidden">
-      <h2>Identitas Trafo</h2>
-        <label for="jenis_gardu">Jenis Gardu:</label>
-      <input type="text" id="jenis_gardu" name="jenis_gardu" required>
-        <label for="daya_trafo">Daya Trafo:</label>
-      <input type="text" id="daya_trafo" name="daya_trafo" required>
-        <label for="merk_trafo">Merk Trafo:</label>
-      <input type="text" id="merk_trafo" name="merk_trafo" required>
-        <label for="no_trafo">No Seri Trafo:</label>
-      <input type="text" id="no_trafo" name="no_trafo" required>
-        <label for="thn">Tahun Pembuatan</label>
-      <input type="text" id="thn" name="thn" required>
+      <div class="bot">
+        <div class="nav-links">
+          <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/android/22/ffffff/home.png"><span>Home</span></a></div>
+          <div class="nav-link-wrapper"><a href="http://127.0.0.1:3000/index.html"><img src="https://img.icons8.com/metro/22/ffffff/about.png"/><span>Tambah Data</span></a></div>
+          <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/download.png"><span>Download</span></a></div>
+          <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/settings.png"/><span>Settings</span></a></div>
+          <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/pastel-glyph/22/ffffff/online-support.png"/><span>Support</span></a></div>
+          <!--<div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/export.png"/><span>Sign Out</span></a></div>-->
+        </div>
       </div>
-      <br>
-
-      
-      <input onclick="toggleVisibility2()" type="checkbox"/> Identitas PHBTR
-      <div id="myElement2" class="hidden">
-      <h2>Identitas PHBTR</h2>
-        <label for="jumlah_jurusan">Jumlah Jurusan:</label>
-      <input type="text" id="jumlah_jurusan" name="jumlah_jurusan" required>
-        <label for="jurusan_aktif">Jurusan Aktif:</label>
-      <input type="text" id="jurusan_aktif" name="jurusan_aktif" required>
-        <label for="kabel_turun">Kabel Turun:</label>
-      <input type="text" id="kabel_turun" name="kabel_turun" required>
-        <label for="kabel_naik">Kabel Naik:</label>
-      <input type="text" id="kabel_naik" name="kabel_naik" required>        
-        <label for="gi">GI</label>
-      <input type="text" id="gi" name="gi" required>  
-        <label for="penyulang">Penyulang:</label>
-      <input type="text" id="penyulang" name="penyulang" required>  
-        <label for="segment">Segment:</label>
-      <input type="text" id="segment" name="segment" required>  
+    </nav>
+    <div class="navbar"> <!-- terakhir -->
+      <div class="left">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    
-    <br>
-    <br>
-    
-        <input type="submit" value="Simpan Data">
-
-    </form>
-  </div>
-
-</body>
+      <div class="right">
+        <h1>administrasi</h1>
+      </div>
+    </div>
+  </body>
 </html>
