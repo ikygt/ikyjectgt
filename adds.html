@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <title>Permohonan Gardu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-image: url('https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1000&dpr=1');
+      background-position: center;
+      
+    }
+
+
+  #form-container {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #66c79a;
+    border: 2px solid #39da08;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  #form-container h2 {
+    text-align: center;
+    color: #1E90FF;
+  }
+
+  #form-container input[type="text"], #form-container input[type="date"], #form-container input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #f1d0d0;
+    border-radius: 5px;
+  }
+  #form-container input[type="submit"] {
+    background-color: #0011ff;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    
+    cursor: pointer;
+  }
+  #form-container input[type="submit"]:hover {
+    background-color: #004B8D;
+  }
+  #footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #58ff42;
+  }
+  .hidden {
+    display: none;
+  }
+  #span{
+    font-size: 15px;
+  }
+  </style>
+
+<script>
+  function toggleVisibility() {
+      var element = document.getElementById("myElement");
+      if (element.style.display === "block") {
+          element.style.display = "none"; // Tampilkan elemen
+      } else {
+          element.style.display = "block"; // Sembunyikan elemen
+      }
+      
+  }
+
+  function toggleVisibility1() {
+      var element1 = document.getElementById("myElement1");
+      if (element1.style.display === "block") {
+          element1.style.display = "none"; // Tampilkan elemen
+      } else {
+          element1.style.display = "block"; // Sembunyikan elemen
+      }
+  }
+
+  function toggleVisibility2() {
+      var element2 = document.getElementById("myElement2");
+      if (element2.style.display === "block") {
+          element2.style.display = "none"; // Tampilkan elemen
+      } else {
+          element2.style.display = "block"; // Sembunyikan elemen
+      }
+  }
+</script>
+
+  </head>
+
+<body>
+  <div id="form-container">
+    <h2>Permohonan Gardu</h2>
+
+    <!-- akses link script app -->
+
+    <form name="form" action="https://script.google.com/macros/s/AKfycbzQGXM9_Qypeki1i1AE46Ct0zY6oHLr6GZWWKHsGTbfcSn2jRBKQr3ind-4PUqe01g/exec" method="post">
+    <!-- end akses  -->
+    <input onclick="toggleVisibility()" type="checkbox"/> Permohonan Gardu
+
+    <div id="myElement" class="hidden">
+      <h2>Identitas Gardu</h2>
+        <label for="jenis_pekerjaan">Jenis Pekerjaan:</label>
+      <input type="text" id="jenis_pekerjaan" name="jenis_pekerjaan" required>
+        <label for="nama_pelanggan">Nama Pelanggan:</label>
+      <input type="text" id="nama_pelanggan" name="nama_pelanggan" required>
+        <label for="pelaksana">Pelaksana:</label>
+      <input type="text" id="pelaksana" name="pelaksana" required>
+      	<label for="nama_gardu">Nama Gardu:</label>
+      <input type="text" id="nama_gardu" name="nama_gardu" required>
+        <label for="ulp">ULP:</label>
+      <input type="text" id="ulp" name="ulp" required>
+      	<label for="lks_gardu">Tikor Lokasi Gardu:</label>
+      <input type="text" id="lks_gardu" name="lks_gardu" required>
+        <label for="kecamatan">Kecamatan:</label>
+      <input type="text" id="kecamatan" name="kecamatan" required>
+      	<label for="kabupaten">Kabupaten:</label>
+      <input type="text" id="kabupaten" name="kabupaten" required>
+        <label for="tglp">Tanggal Pasang:</label>
+      <input type="text" id="tglp" name="tglp" required>
+        <label for="tglo">Tanggal Operasi:</label>
+      <input type="text" id="tglo" name="tglo" required>
+      
+
+
+      </div>
+      <br>
+      
+      <input onclick="toggleVisibility1()" type="checkbox"/> Identitas Trafo
+      <div id="myElement1" class="hidden">
+      <h2>Identitas Trafo</h2>
+        <label for="jenis_gardu">Jenis Gardu:</label>
+      <input type="text" id="jenis_gardu" name="jenis_gardu" required>
+        <label for="daya_trafo">Daya Trafo:</label>
+      <input type="text" id="daya_trafo" name="daya_trafo" required>
+        <label for="merk_trafo">Merk Trafo:</label>
+      <input type="text" id="merk_trafo" name="merk_trafo" required>
+        <label for="no_trafo">No Seri Trafo:</label>
+      <input type="text" id="no_trafo" name="no_trafo" required>
+        <label for="thn">Tahun Pembuatan</label>
+      <input type="text" id="thn" name="thn" required>
+      </div>
+      <br>
+
+      
+      <input onclick="toggleVisibility2()" type="checkbox"/> Identitas PHBTR
+      <div id="myElement2" class="hidden">
+      <h2>Identitas PHBTR</h2>
+        <label for="jumlah_jurusan">Jumlah Jurusan:</label>
+      <input type="text" id="jumlah_jurusan" name="jumlah_jurusan" required>
+        <label for="jurusan_aktif">Jurusan Aktif:</label>
+      <input type="text" id="jurusan_aktif" name="jurusan_aktif" required>
+        <label for="kabel_turun">Kabel Turun:</label>
+      <input type="text" id="kabel_turun" name="kabel_turun" required>
+        <label for="kabel_naik">Kabel Naik:</label>
+      <input type="text" id="kabel_naik" name="kabel_naik" required>        
+        <label for="gi">GI</label>
+      <input type="text" id="gi" name="gi" required>  
+        <label for="penyulang">Penyulang:</label>
+      <input type="text" id="penyulang" name="penyulang" required>  
+        <label for="segment">Segment:</label>
+      <input type="text" id="segment" name="segment" required>  
+      </div>
+    
+    <br>
+    <br>
+    
+        <input type="submit" value="Simpan Data">
+
+    </form>
+  </div>
+
+</body>
+</html>
